@@ -1,0 +1,14 @@
+let qTeams={
+	
+qTeams = {aaiec: 400, 
+aaiwc: 60, 
+qai: 200, 
+poc: 100,
+gtm: 50,
+hr: 10
+
+};
+let sorted=[];
+sorted=Object.keys(qteams).sort((a,b) => qTeams[b]-qTeams[a])
+
+console.log(sorted)
