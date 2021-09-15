@@ -1,0 +1,51 @@
+<div class="container">
+
+<form class="content" [formGroup]="employeeregistration" (ngSubmitData)="submitData()" >
+<h3 class="text-center">EmployeeRegistration</h3>
+<div class="row">
+
+<div class="mt-2 mb-2 col-lg-6 col-6">
+<input type="text" formControlName="employeeName"  class="form-control" placeholder="employe name" >
+
+<div "ngIf="employename.invalid && (employename.touched || employename.dirty)"> <span class="error" "ngIf="employename.errors?.required">"employe Name is Required.</span>
+<span class="error" ngif="employename.errors?.pattern">"Enter only characters.</span>
+  
+ </div>
+</div>
+
+<div class="mt-2 mb-2 col-lg-6 col-6">
+<input type="text" formControlName="employeAddress" class="form-control" placeholder="employe address" >
+<div "ngIf="employeAddress.invalid && (employeAddress.touched || employeAddress.dirty)"> <span class="error" "ngIf="employeAddress.errors?.required">"employe Address is Required.</span>
+<span class="error" ngif="employeAddress.errors?.pattern">"Enter only characters.</span>
+  
+ </div>
+</div>
+
+<div class="mt-2 mb-2 col-lg-6 col-6">
+<input type="text" formControlName="emailId" class="form-control" placeholder="email address" >
+<div "ngIf="emailid.invalid && (emailid.touched || emailid.dirty)">
+<span class="error" "ngIf="emailid.errors?.required">Email Id is Required.</span> <span class="error" "nglf="emailid.errors?.email">Enter Valid Email Address.</span>
+</div>
+</div>
+
+<div class="mt-2 mb-2 col-lg-6 col-6">
+<input type="text" formControlName="dateofbirth" class="form-control" placeholder="dateofbirth" >
+<div "ngIf="dateofbirth.invalid && (dateofbirth.touched || dateofbirth.dirty)"> 
+<span class="error" "ngIf="dateofbirth.errors?.required">"dateofbirth is Required.</span> <span class="error" ngIf="dateofbirth.errors?.pattern">"Enter Only dateofbirth.</span>
+</div>
+</div>
+<div class="mt-2 mb-2 col-lg-6 col-6">
+<input type="text" formControlName="phoneNumber" class="form-control" placeholder="phone number" >
+<div "ngIf="phonenumber.invalid && (phonenumber.touched || phonenumber.dirty)"> 
+<span class="error" "ngIf="phonenumber.errors?.required">"phone Number is Required.</span> <span class="error" ngIf="phonenumber.errors?.pattern">"Enter Only Number.</span>
+</div>
+</div>
+
+<div class="mt-3 col-lg-12 col-12">
+<button class="btn">submit</button>
+
+
+</div>
+
+</form>
+</div>
