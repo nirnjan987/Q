@@ -1,0 +1,124 @@
+<html>
+<head>
+  <title>Firebase Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="./app.css" />
+ <link
+      rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+</head>
+<body>
+
+  <div id="login_div" class="main-div">
+    <h3>Welcome to Firebase</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+      
+    <button onclick="login()">Login to Account</button>
+<button onclick="googleSignIn()" style="margin-top:10px;margin-bottom:5px"> Sign in with Google </button>
+      
+              <h7>Do not have an account ? Sign up now</h7>
+    <button onclick="register()" style="margin-top:10px">Signup to Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div1">
+
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Famous Blog</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="create.html">Create</a>
+          </li>
+
+        </ul>
+        <li class="nav-item">
+<button onclick="logout()" style="margin-top:5px">Login Out</button>
+</li>
+      </div>
+    </nav>
+
+    <main role="main">
+      <!-- JUMBOTRON -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3 pt-4">Firebase Blog</h1>
+          
+          <p>
+            <a class="btn btn-primary btn-lg" href="#" role="button"
+              >Learn more &raquo;</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row" id="posts-collection"></div>
+
+        <hr />
+      </div>
+      <!-- /container -->
+    </main>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-firestore.js"></script>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="app.js"></script>
+  </div>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+var firebaseConfig = {
+  apiKey: "AIzaSyAG_id9d1KFKSb4hFKetR5klFU2HEUxW6o",
+  authDomain: "first-project-a8e3f.firebaseapp.com",
+  databaseURL: "https://first-project-a8e3f-default-rtdb.firebaseio.com",
+  projectId: "first-project-a8e3f",
+  storageBucket: "first-project-a8e3f.appspot.com",
+  messagingSenderId: "178288379425",
+  appId: "1:178288379425:web:8ea15c5de648ab9c43c560",
+  measurementId: "G-T0PZVSVMXL"
+};
+    
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="index.js"></script>
+
+</body>
+</html>
