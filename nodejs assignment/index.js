@@ -2,9 +2,9 @@ const express=require('express');
 const mongoose= require('mongoose');
 const bodyparser=require('body-parser');
 const cookieParser=require('cookie-parser');
-const User=require('./models/user');
-const {auth} =require('./middlewares/auth');
-const db=require('./config/config').get(process.env.NODE_ENV);
+const User=require('./user');
+const {auth} =require('./auth');
+const db=require('./config').get(process.env.NODE_ENV);
 
 
 const app=express();
@@ -21,7 +21,7 @@ mongoose.connect(db.DATABASE,{ useNewUrlParser: true,useUnifiedTopology:true },f
 
 
 // user registration
-app.post('/api/register',function(req,res){
+app.post('/register',function(req,res){
    const newuser=new User(req.body);
    console.log(newuser);
 
@@ -43,7 +43,7 @@ app.post('/api/register',function(req,res){
 
 
 // user login
-app.post('/api/login', function(req,res){
+app.post('/login', function(req,res){
     let token=req.cookies.auth;
     User.findByToken(token,(err,user)=>{
         if(err) return  res(err);
@@ -74,7 +74,7 @@ app.post('/api/login', function(req,res){
 });
 
 //user logout
- app.get('/api/logout',auth,function(req,res){
+ app.get('/logout',auth,function(req,res){
         req.user.deleteToken(req.token,(err,user)=>{
             if(err) return res.status(400).send(err);
             res.sendStatus(200);
@@ -83,7 +83,7 @@ app.post('/api/login', function(req,res){
     }); 
 
 //  user information
-app.get('/api/profile',auth,function(req,res){
+app.get('/profile',auth,function(req,res){
         res.json({
             isAuth: true,
             id: req.user._id,
